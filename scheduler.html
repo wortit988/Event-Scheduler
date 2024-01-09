@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Weekly Schedule</title>
+</head>
+<body>
+  <div class="schedule-container">
+    <div class="schedule-grid-div">
+      <table class="schedule-grid">
+        <tr class="day-label">
+          <!-- Empty cell for spacing -->
+          <th class="label-nav"><img src="/test.png" /></th>
+          <!-- Days of the week -->
+          <th class="day-slot">Sunday</th>
+          <th class="day-slot">Monday</th>
+          <th class="day-slot">Tuesday</th>
+          <th class="day-slot">Wednesday</th>
+          <th class="day-slot">Thursday</th>
+          <th class="day-slot">Friday</th>
+          <th class="day-slot">Saturday</th>
+          <!-- ... Add more days as needed -->
+        </tr>
+
+        <!-- Time slots -->
+        <!-- You can generate these rows dynamically based on the number of time slots you want ->
+
+        <-- ... Add more rows as needed -->
+     
+      </table>
+    </div>
+
+    <!-- Add Event and Delete Event buttons -->
+    <div class="action-buttons">
+      <button id="addEventBtn" class="styled">Add Event</button>
+      <button id="deleteEventBtn" class="styled">Delete Event</button>
+    </div>
+  </div>
+
+  <!-- Add Event Modal -->
+  <div id="addEventModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModalBtn" class="close">&times;</span>
+      <h2>Add Event</h2>
+      <form id="eventForm">
+		<div>
+			<label>Time:</label>
+			<input type="time" id="eventStartTime" placeholder="Enter time"> - <input type="time" id="eventEndTime" placeholder="Enter time">
+		</div>
+		<div>
+			<label>Days:</label>
+				<div class="days-checkbox">
+				  <label><input type="checkbox" name="eventDay" value="Sunday">Sunday</label>
+				  <label><input type="checkbox" name="eventDay" value="Monday">Monday</label>
+				  <label><input type="checkbox" name="eventDay" value="Tuesday">Tuesday</label>
+				  <label><input type="checkbox" name="eventDay" value="Wednesday">Wednesday</label>
+				  <label><input type="checkbox" name="eventDay" value="Thursday">Thursday</label>
+				  <label><input type="checkbox" name="eventDay" value="Friday">Friday</label>
+				  <label><input type="checkbox" name="eventDay" value="Saturday">Saturday</label>
+				  <!-- Add checkboxes for other days -->
+				</div>
+		</div>
+		<div>
+			<label>Notes:</label>
+			<textarea id="eventNotes" placeholder="Enter notes"></textarea>
+		</div>
+
+        <button type="button" id="submitEventBtn" class="styled">Add Event</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

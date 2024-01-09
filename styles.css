@@ -1,0 +1,129 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.schedule-container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.schedule-grid {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-grid-div {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-grid th,
+.schedule-grid td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.schedule-grid th.time-slot {
+  width: 90px; /* Adjust the width of the time slot cells */
+  transform: rotate(0deg); /* Flip the text to be parallel to the screen */
+}
+
+.schedule-grid th,
+.schedule-grid td {
+  height: 50px; /* Adjust the height of the cells */
+}
+
+.action-buttons {
+  margin-top: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.time-slot {
+  color: yellow;
+  background: black;
+  font-size: large;
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+.day-slot {
+  color: yellow;
+  background: black;
+  font-size: large;
+  font-family: Arial, sans-serif;
+}
+
+.day-label {
+  width: 100%;
+}
+
+.label-nav img {
+  height: 100%;
+  width: 100%;
+}
+
+
+.highlight-event {
+    background-color: #00FF00; /* You can adjust the background color as needed */
+    color: black;
+    font-weight: bold;
+}
+
+.styled {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow:
+    inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+  box-shadow:
+    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
