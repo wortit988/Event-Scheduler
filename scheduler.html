@@ -1,70 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Weekly Schedule</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Virtual Pharmacy | Store Operational Hours Details</title>
 </head>
 <body>
-  <div class="schedule-container">
-    <div class="schedule-grid-div">
-      <table class="schedule-grid">
-        <tr class="day-label">
-          <!-- Empty cell for spacing -->
-          <th class="label-nav"><img src="/test.png" /></th>
-          <!-- Days of the week -->
-          <th class="day-slot">Sunday</th>
-          <th class="day-slot">Monday</th>
-          <th class="day-slot">Tuesday</th>
-          <th class="day-slot">Wednesday</th>
-          <th class="day-slot">Thursday</th>
-          <th class="day-slot">Friday</th>
-          <th class="day-slot">Saturday</th>
-          <!-- ... Add more days as needed -->
-        </tr>
+  <header class="cd-main-header text-center flex flex-column flex-center">
 
-        <!-- Time slots -->
-        <!-- You can generate these rows dynamically based on the number of time slots you want ->
-
-        <-- ... Add more rows as needed -->
-     
-      </table>
-    </div>
-
-    <!-- Add Event and Delete Event buttons -->
-    <div class="action-buttons">
-      <button id="addEventBtn" class="styled">Add Event</button>
-      <button id="deleteEventBtn" class="styled">Delete Event</button>
-    </div>
+    <h1 class="text-xxl">Store 101</h1>
+  </header>
+  <div class="action-buttons">
+    <button id="addEventBtn" class="styled">Add Event</button>
   </div>
 
+  <div class="cd-schedule margin-top-lg margin-bottom-lg js-cd-schedule">
+    <div class="cd-schedule__timeline">
+      <ul>
+        <li><span>09:00</span></li>
+        <li><span>09:30</span></li>
+        <li><span>10:00</span></li>
+        <li><span>10:30</span></li>
+        <li><span>11:00</span></li>
+        <li><span>11:30</span></li>
+        <li><span>12:00</span></li>
+        <li><span>12:30</span></li>
+        <li><span>13:00</span></li>
+        <li><span>13:30</span></li>
+        <li><span>14:00</span></li>
+        <li><span>14:30</span></li>
+        <li><span>15:00</span></li>
+        <li><span>15:30</span></li>
+        <li><span>16:00</span></li>
+        <li><span>16:30</span></li>
+        <li><span>17:00</span></li>
+        <li><span>17:30</span></li>
+        <li><span>18:00</span></li>
+      </ul>
+    </div> <!-- .cd-schedule__timeline -->
+  
+    <div class="cd-schedule__events">
+      <ul>
+        <li class="cd-schedule__group">
+          <div class="cd-schedule__top-info"><span>Sunday</span></div>
+          <ul id="Sunday"></ul>
+        </li>
+
+        <li class="cd-schedule__group">
+          <div class="cd-schedule__top-info"><span>Monday</span></div>  
+          <ul id="Monday"></ul>
+        </li>
+  
+        <li class="cd-schedule__group">
+          <div class="cd-schedule__top-info"><span>Tuesday</span></div>
+          <ul id="Tuesday"></ul>
+        </li>
+  
+        <li class="cd-schedule__group">
+          <div class="cd-schedule__top-info"><span>Wednesday</span></div>  
+          <ul id="Wednesday"></ul>
+        </li>
+  
+        <li class="cd-schedule__group">
+          <div class="cd-schedule__top-info"><span>Thursday</span></div> 
+          <ul id="Thursday"></ul>
+        </li>
+  
+        <li class="cd-schedule__group">
+          <div class="cd-schedule__top-info"><span>Friday</span></div>  
+          <ul id="Friday"></ul>
+        </li> 
+        <li class="cd-schedule__group">
+          <div class="cd-schedule__top-info"><span>Saturday</span></div>
+          <ul id="Saturday"></ul>
+        </li>
+
+      </ul>
+    </div> 
+
   <!-- Add Event Modal -->
-  <div id="addEventModal" class="modal">
+  <div id="addEventModal" class="modal" draggable="true">
     <div class="modal-content">
       <span id="closeModalBtn" class="close">&times;</span>
       <h2>Add Event</h2>
       <form id="eventForm">
 		<div>
-			<label>Time:</label>
-			<input type="time" id="eventStartTime" placeholder="Enter time"> - <input type="time" id="eventEndTime" placeholder="Enter time">
+			<label>Enter Start Time:</label>
+			<input type="time" id="eventStartTime" placeholder="Enter Start time"> 
 		</div>
+    <div>
+      <label>Enter End Time:&nbsp;</label>
+      <input type="time" id="eventEndTime" placeholder="Enter End time">
+    </div>
 		<div>
 			<label>Days:</label>
 				<div class="days-checkbox">
-				  <label><input type="checkbox" name="eventDay" value="Sunday">Sunday</label>
+          <label><input type="checkbox" name="eventDay" value="Sunday">Sunday</label>
 				  <label><input type="checkbox" name="eventDay" value="Monday">Monday</label>
 				  <label><input type="checkbox" name="eventDay" value="Tuesday">Tuesday</label>
 				  <label><input type="checkbox" name="eventDay" value="Wednesday">Wednesday</label>
 				  <label><input type="checkbox" name="eventDay" value="Thursday">Thursday</label>
 				  <label><input type="checkbox" name="eventDay" value="Friday">Friday</label>
-				  <label><input type="checkbox" name="eventDay" value="Saturday">Saturday</label>
+          <label><input type="checkbox" name="eventDay" value="Saturday">Saturday</label>
 				  <!-- Add checkboxes for other days -->
 				</div>
 		</div>
+    
 		<div>
-			<label>Notes:</label>
-			<textarea id="eventNotes" placeholder="Enter notes"></textarea>
+			<label for="operatingModel">Choose an Operating Model:</label>
+        <select name="operatingModel" id="operatingModel">
+          <option value="fullVert">Full Virtual</option>
+          <option value="clinic">Clinical</option>
+          <option value="oneRph">One RPH</option>
+          <option value="extHour">Extended Hour</option>
+          <option value="other">Other</option>
+        </select>
 		</div>
 
         <button type="button" id="submitEventBtn" class="styled">Add Event</button>
@@ -72,6 +124,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
-</html>
+	</html>
