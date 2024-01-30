@@ -204,19 +204,19 @@
 		var result = "";		
 			switch (evtopModel) {
 				case "fullVert":
-				result = "Full Virtual";
+				result = "Event 1";
 				break;
 				case "clinic":
-				result = "Clinical";
+				result = "Event 2";
 				break;
 				case "oneRph":
-				result = "One RPH";
+				result = "Event 3";
 				break;
 				case "extHour":
-				result = "Extended Hour";
+				result = "Event 4";
 				break;
 				case "other":
-				result = "Other";
+				result = "Event 5";
 				break;
 				default:
 				result = "Invalid value";
