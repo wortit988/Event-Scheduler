@@ -3916,7 +3916,9 @@ a {
 	padding: 0.75em;
 	padding: var(--space-sm);
 	box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.2);
-	text-decoration: none
+	text-decoration: none;
+	position: relative;
+	cursor: default;
 }
 
 .cd-schedule__event a::before {
@@ -4564,4 +4566,13 @@ body {
   .modal-content,
   #submitEventBtn {
 	transition: 0.3s;
+  }
+
+  .delete-btn {
+		font-size: 24px;
+		font-weight: bold;
+		cursor: default;
+		top: 1px;
+		right: 1px;
+		position: absolute;
   }

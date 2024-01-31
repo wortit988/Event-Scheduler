@@ -226,7 +226,6 @@
 		eventCellData.setAttribute("data-end", evtEndTime);
 		eventCellData.setAttribute("data-event", evtopModel);
 		eventCellData.setAttribute("eventId", eventId);
-		eventCellData.href = "#0";
   
 			//slotHeight is the height of one cell in px
 			  slotHeight = 50;
@@ -261,14 +260,14 @@
 		eventCellTxt.classList.add("cd-schedule__name");
 		eventCellTxt.innerHTML = result;
 		eventCellDelBtn.classList.add("delete-btn");
-		eventCellDelBtn.innerHTML = "✖";
+		eventCellDelBtn.innerHTML = "&times;";
 
 		eventCellDelBtn.setAttribute('onclick','handleDelete();'); // for FF
 		eventCellDelBtn.onclick = function() {handleDelete(event);}; // for IE
   
-  
-		eventCellData.appendChild(eventCellTxt);
 		eventCellData.appendChild(eventCellDelBtn);
+		eventCellData.appendChild(eventCellTxt);
+		
   
 		eventCell.appendChild(eventCellData);
 
